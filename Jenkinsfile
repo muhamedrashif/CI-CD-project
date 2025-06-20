@@ -16,6 +16,8 @@ sh 'docker ps -a -q --filter "publish=3001" | xargs -r docker rm || true'
                     sh 'docker ps -q --filter "publish=3002" | xargs -r docker stop || true'
                     sh 'docker ps -a -q --filter "publish=3002" | xargs -r docker rm || true'
 
+ sh 'docker ps -q --filter "publish=80" | xargs -r docker stop || true'
+            sh 'docker ps -a -q --filter "publish=80" | xargs -r docker rm || true'
                     // Build and start containers
                     sh 'docker-compose build'
                     sh 'docker-compose up -d'
