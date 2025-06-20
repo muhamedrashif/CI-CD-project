@@ -2,12 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/muhamedrashif/CI-CD-project.git'
-            }
-        }
-
         stage('Build & Deploy') {
             steps {
                 script {
@@ -19,3 +13,4 @@ pipeline {
         }
     }
 }
+
